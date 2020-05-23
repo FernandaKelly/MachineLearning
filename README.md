@@ -5,12 +5,16 @@ Rio Grande do Sul](https://www.ufrgs.br/ime/departamentos/estatistica/) em 2020.
 
 ## Árvores de Decisão
 
-1. Pacotes utilizados:
+1. Pacotes utilizados: caret, data.tree, rpart, rpart.plot
 
-  * caret
-  * data.tree
-  * rpart
-  * rpart.plot
+2. Métodos estudados:
+
+  * Algoritmo ID3
+  * CART
+  * CHAID
+  * Bagging
+  * Boosting
+  * Random Forest
 
 ## Cluster
 
