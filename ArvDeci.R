@@ -172,7 +172,7 @@ model <- rpart(country ~., data = dados, subset = inTrain,
 
 
 
-# árvore e Previsões
+# Árvore e Previsões
 rpart.plot(model, yesno = 2, tweak = 0.8)
 
 inpred <- predict(model, dados[inTrain,], type = "class")
