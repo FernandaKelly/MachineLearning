@@ -16,19 +16,4 @@ Rio Grande do Sul](https://www.ufrgs.br/ime/departamentos/estatistica/) em 2020.
   * Boosting
   * Random Forest
 
-## Cluster
 
-## Pacote GLMNET
-
-
-## LDA
-
-## Monte Carlo
-
-## PCA
-
-## Suport Vector Machine
-
-## Spline
-
-## Redes Neurais
