@@ -15,6 +15,3 @@ Rio Grande do Sul](https://www.ufrgs.br/ime/departamentos/estatistica/) em 2020.
   * Bagging
   * Boosting
   * Random Forest
-
-
-#Teste
