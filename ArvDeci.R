@@ -6,7 +6,7 @@ library(data.tree)
 # CART
 library(rpart)      # for computing decision tree models 
 library(rpart.plot)
-
+library(rpart.plot)
 
 ########################################
 #
@@ -15,7 +15,7 @@ library(rpart.plot)
 #
 ########################################
 # Função para verificar se um conjunto é puro
-# a classe deve estar na última coluna!!
+# a classe deve estar na ultima coluna!!
 IsPure <- function(data){
   length(unique(data[,ncol(data)])) == 1
 }
