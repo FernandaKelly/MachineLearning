@@ -1,15 +1,15 @@
 #Exemplos do livro R FOR DATA SCIENCE
 
-
 #Visualização de Dados com GGPLT2
+
+
+#teste
 
 gplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
 
-
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, color = class))
-
 
 
 ggplot(data = mpg) + 
@@ -19,7 +19,6 @@ ggplot(data = mpg) +
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) + 
   facet_wrap(~ class, nrow = 3)
-
 
 
 ggplot(data = mpg) + 
@@ -33,18 +32,13 @@ ggplot(data = mpg) +
   geom_point(mapping = aes(x = displ, y = hwy)) +
   facet_grid(drv ~ .)
 
-
-
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) +
   facet_grid(. ~ cyl)
 
-
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy)) + 
   facet_wrap(~ class, nrow = 2)
-
-
 
 # left
 ggplot(data = mpg) + 
@@ -55,19 +49,12 @@ ggplot(data = mpg) +
   geom_smooth(mapping = aes(x = displ, y = hwy))
 
 
-
-
 ggplot(data = mpg) + 
   geom_smooth(mapping = aes(x = displ, y = hwy, linetype = drv))
-
-
-
 
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy)) + 
   geom_point(mapping = aes(color = class)) +
   geom_smooth(data = filter(mpg, class == "subcompact"), se = FALSE)
-
-
 
 ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) + 
   geom_point() + 
@@ -76,8 +63,6 @@ ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = drv)) +
 
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut))
-
-
 
 demo <- tribble(
   ~cut,         ~freq,
@@ -91,13 +76,8 @@ demo <- tribble(
 ggplot(data = demo) +
   geom_bar(mapping = aes(x = cut, y = freq), stat = "identity")
 
-
-
-
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, y = stat(prop), group = 1))
-
-
 
 ggplot(data = diamonds) + 
   stat_summary(
@@ -113,20 +93,14 @@ ggplot(data = diamonds) +
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, fill = cut))
 
-
-
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, fill = clarity))
-
-
 
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, fill = clarity), position = "fill")
 
-
 ggplot(data = diamonds) + 
   geom_bar(mapping = aes(x = cut, fill = clarity), position = "dodge")
-
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), position = "jitter")
@@ -137,7 +111,6 @@ ggplot(data = mpg) +
 ?position_identity
 ?position_jitter
 ?position_stack
-
 
 ggplot(data = mpg, mapping = aes(x = class, y = hwy)) + 
   geom_boxplot()
