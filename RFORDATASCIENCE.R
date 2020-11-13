@@ -1,10 +1,11 @@
+#Exemplos do livro R FOR DATA SCIENCE
 
 
-#teste
-
+#Visualização de Dados com GGPLT2
 
 gplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy), color = "blue")
+
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, color = class))
@@ -13,7 +14,6 @@ ggplot(data = mpg) +
 
 ggplot(data = mpg) + 
   geom_point(mapping = aes(x = displ, y = hwy, color = displ < 5))
-
 
 
 ggplot(data = mpg) + 
