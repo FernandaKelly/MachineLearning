@@ -209,6 +209,48 @@ dplyr::rename(flights, tail_num = tailnum)
 dplyr::select(flights, time_hour, air_time, everything())
 
 
+#FUNÇÃO MUTATE
+
+flights_sml <- dplyr::select(flights, 
+                      year:day, 
+                      ends_with("delay"), 
+                      distance, 
+                      air_time)
+
+
+dplyr::mutate(flights_sml,
+       gain = dep_delay - arr_delay,
+       speed = distance / air_time * 60)
+
+
+dplyr::mutate(flights_sml,
+       gain = dep_delay - arr_delay,
+       hours = air_time / 60,
+       gain_per_hour = gain / hours)
+
+#FUNÇÃO TRANSMUTE
+
+dplyr::transmute(flights,
+          gain = dep_delay - arr_delay,
+          hours = air_time / 60,
+          gain_per_hour = gain / hours)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
