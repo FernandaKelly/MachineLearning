@@ -235,18 +235,41 @@ dplyr::transmute(flights,
           hours = air_time / 60,
           gain_per_hour = gain / hours)
 
+dplyr::transmute(flights,
+          dep_time,
+          hour = dep_time %/% 100,
+          minute = dep_time %% 100)
+
+(x <- 1:10)
+lag(x)
+lead(x)
+
+cumsum(x)
+cummean(x)
+
+y <- c(1, 2, 2, NA, 3, 4)
+min_rank(y)
+min_rank(desc(y))
+
+#FUNÇÃO SUMMARISE
+
+summarise(flights, delay = mean(dep_delay, na.rm = TRUE))
+
+by_day <- group_by(flights, year, month, day)
+summarise(by_day, delay = mean(dep_delay, na.rm = TRUE))
+
+by_dest <- group_by(flights, dest)
+delay <- summarise(by_dest,
+                   count = n(),
+                   dist = mean(distance, na.rm = TRUE),
+                   delay = mean(arr_delay, na.rm = TRUE))
+
+delay <- filter(delay, count > 20, dest != "HNL")
 
 
-
-
-
-
-
-
-
-
-
-
+ggplot(data = delay, mapping = aes(x = dist, y = delay)) +
+  geom_point(aes(size = count), alpha = 1/3) +
+  geom_smooth(se = FALSE)
 
 
 
