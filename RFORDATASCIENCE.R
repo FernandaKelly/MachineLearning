@@ -142,12 +142,8 @@ library(dplyr)
 
 ##################################################################################
 
-
-
 #stats::filter()
 #stats::lag()
-
-
 
 nycflights13::flights #QUADRO DE DADOS QUE VAMOS UTILIZAR
 str(flights)
@@ -174,16 +170,22 @@ near(sqrt(2)**2,2)
 
 dplyr::filter(flights, flights$month == 11 | flights$month == 12) #ENCONTRAR TODOS OS VOOS QUE PARTIRAM EM NOVEMBRO OU DEZEMBRO
 
+#x %in% y
+
+nov_dec <- dplyr::filter(flights, month %in% c(11,12)) #SELECIONA TODAS AS LINHAS QUE ESTÃO EM X EM Y
+
+dplyr::filter(flights, !(flights$arr_delay > 120 | dep_delay > 120)) #OS DOIS FILTROS RETORNAM A MESMA FILTRAGEM DE DADOS
+dplyr::filter(flights, flights$arr_delay <=20, dep_delay <= 120)
+
+#Obs.: A FUNÇÃO FILTER INCLUI APENAS LINHAS ONDE A CONDIÇÃO DA FUNÇÃO IS.NA() É TRUE; ELE EXCLUI OS VALORES FALSE E NA.
+#QUANDO FOR DE INTERESSE TRABALHAR COM NA DEVEMOS SOLICITA-LOS EXPLICITAMENTE
 
 
+#ORGANIZAR LINHAS COM A FUNÇÃO ARRANGE
 
+dplyr::arrange(flights, year, month, day)
 
-
-
-
-
-
-
+dplyr::arrange(flights, desc(dep_delay)) #OS VALORES AUSENTES SÃO SEMPRE CLASSIFICADOS NO FINAL
 
 
 
