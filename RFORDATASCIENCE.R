@@ -273,8 +273,15 @@ ggplot(data = delay, mapping = aes(x = dist, y = delay)) +
 
 
 
-
-
+#OUTRA FORMA DE FAZER O QUE ESTÁ ACIMA UTILIZANDO O OPERADOR PIPE
+delays <- flights %>% 
+  group_by(dest) %>% 
+  summarise(
+    count = n(),
+    dist = mean(distance, na.rm = TRUE),
+    delay = mean(arr_delay, na.rm = TRUE)
+  ) %>% 
+  filter(count > 20, dest != "HNL")
 
 
 
