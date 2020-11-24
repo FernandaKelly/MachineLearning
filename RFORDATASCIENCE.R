@@ -187,17 +187,26 @@ dplyr::arrange(flights, year, month, day)
 
 dplyr::arrange(flights, desc(dep_delay)) #OS VALORES AUSENTES SÃO SEMPRE CLASSIFICADOS NO FINAL
 
+#SELECIONAR VARIÁVEIS COM A FUNÇÃO SELECT
+
+dplyr::select(flights, year, month, day) #É APENAS UMA SELEÇÃO
+dplyr::select(flights, year:day)
+dplyr::select(flights, -(year:day)) #TODAS AS VARIÁVEIS MENOS DE YEAR Á DAY
+
+#FUNÇÕES AUXILIARES
+
+#starts_with("abc")
+#ends_with("xyz")
+#contains("ijk")
+#matches("(.)\\1")
+#num_range("x", 1:3)
 
 
+#FUNÇÃO RENAME
 
+dplyr::rename(flights, tail_num = tailnum)
 
-
-
-
-
-
-
-
+dplyr::select(flights, time_hour, air_time, everything())
 
 
 
