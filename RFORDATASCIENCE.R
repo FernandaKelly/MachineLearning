@@ -149,14 +149,30 @@ library(dplyr)
 
 
 
+nycflights13::flights #QUADRO DE DADOS QUE VAMOS UTILIZAR
+str(flights)
 
+#int significa números inteiros.
+#dbl significa duplas ou números reais.
+#chr significa vetores de caracteres ou strings.
+#dttm significa data-hora (uma data + uma hora).
+#lgl significa lógico, vetores que contêm apenas TRUEou FALSE.
+#fctr significa fatores, que R usa para representar variáveis categóricas com valores possíveis fixos.
+#date significa datas.
 
+dim(flights)
 
+?flights #DOCUMENTAÇÃO DO QUADRO DE DADOS
 
+dplyr::filter(flights, month == 1, day == 1) %>%
+  dim()  #SÃO 842 OBSERVAÇÕES COM ESSAS CARACTERÍSTICAS SEM MODIFICAR O QUADRO DE DADOS REAL
 
+jan1 <- dplyr::filter(flights, month == 1, day == 1) #R IMPRIME OS RESULTADOS E SALVA EM UMA VARIÁVEL
 
+sqrt(2)**2 == 2
+near(sqrt(2)**2,2)
 
-
+dplyr::filter(flights, flights$month == 11 | flights$month == 12) #ENCONTRAR TODOS OS VOOS QUE PARTIRAM EM NOVEMBRO OU DEZEMBRO
 
 
 
