@@ -274,6 +274,7 @@ ggplot(data = delay, mapping = aes(x = dist, y = delay)) +
 
 
 #OUTRA FORMA DE FAZER O QUE ESTÁ ACIMA UTILIZANDO O OPERADOR PIPE
+
 delays <- flights %>% 
   group_by(dest) %>% 
   summarise(
@@ -284,16 +285,17 @@ delays <- flights %>%
   filter(count > 20, dest != "HNL")
 
 
+flights %>% 
+  group_by(year, month, day) %>% 
+  summarise(mean = mean(dep_delay, na.rm = TRUE)) #O SUMMARISE ATUA COM A MÉDIA NO GROUP_BY DOS DIAS
 
 
+not_cancelled <- flights %>% 
+  filter(!is.na(dep_delay), !is.na(arr_delay))
 
-
-
-
-
-
-
-
+not_cancelled %>% 
+  group_by(year, month, day) %>% 
+  summarise(mean = mean(dep_delay))
 
 
 
