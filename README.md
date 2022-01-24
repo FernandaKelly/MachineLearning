@@ -7,7 +7,7 @@ Rio Grande do Sul](https://www.ufrgs.br/ime/departamentos/estatistica/) em 2020.
 
 1. Pacotes utilizados: caret, data.tree, rpart, rpart.plot, ipred, gbm, randomForest.
 
-2. Métodos estudados:
+1.1 Métodos estudados:
 
   * Algoritmo ID3
   * CART
